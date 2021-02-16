@@ -110,16 +110,16 @@ module.exports = (api, opts) => {
       qFileLines += `\nimport './styles/quasar.${opts.quasar.cssPreprocessor}'`
     }
     else {
-      qFileLines += `\nimport 'quasar/dist/quasar.css'`
+      qFileLines += `\nimport '@frontend/quasar/dist/quasar.css'`
     }
 
     if (hasIconSet) {
       const set = iconMap[opts.quasar.iconSet] || opts.quasar.iconSet
-      qFileLines += `\nimport iconSet from 'quasar/icon-set/${set}.js'`
+      qFileLines += `\nimport iconSet from '@frontend/quasar/icon-set/${set}.js'`
     }
 
     if (hasLang) {
-      qFileLines += `\nimport lang from 'quasar/lang/${opts.quasar.lang}.js'`
+      qFileLines += `\nimport lang from '@frontend/quasar/lang/${opts.quasar.lang}.js'`
     }
 
     opts.quasar.features

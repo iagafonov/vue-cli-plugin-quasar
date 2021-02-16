@@ -3,7 +3,7 @@ const path = require('path')
 const webpack = require('webpack')
 
 const getDevlandFile = require('./lib/get-devland-file')
-const { version } = getDevlandFile('quasar/package.json')
+const { version } = getDevlandFile('@frontend/quasar/package.json')
 
 function getCssPreprocessor (api) {
   return ['sass', 'scss', 'styl'].find(ext => {
@@ -29,15 +29,15 @@ module.exports = (api, options) => {
       )
       .set(
         'quasar-variables-styl',
-        `quasar/src/css/variables.${srcCssExt}`
+        `@frontend/quasar/src/css/variables.${srcCssExt}`
       )
       .set(
         'quasar-styl',
-        `quasar/dist/quasar.${srcCssExt}`
+        `@frontend/quasar/dist/quasar.${srcCssExt}`
       )
       .set(
         'quasar-addon-styl',
-        `quasar/src/css/flex-addon.${srcCssExt}`
+        `@frontend/quasar/src/css/flex-addon.${srcCssExt}`
       )
 
     chain.plugin('define-quasar')
